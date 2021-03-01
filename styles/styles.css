@@ -23,7 +23,7 @@ body {
 }
 
 .bold-color {color: var(--gray-one);}
-.semi-bold-color {color: var(--gray-two);}
+.semi-bold-color, .tags span {color: var(--gray-two);}
 .light-color {color: var(--gray-three);}
 .lighter-color {color: var(--gray-five);}
 .blue-color {color: var(--blue);}
@@ -33,6 +33,8 @@ body {
 .mg-8 {margin: 8px 0;}
 .mg-0 {margin: 0;}
 .mb-12 {margin: 0 0 12px;}
+.mt-16 {margin: 16px 0 0;}
+.mg-24 {margin: 24px 0;}
 .wg-500 {font-weight: 500;}
 .wg-600 {font-weight: 600;}
 a {text-decoration: none;}
@@ -61,12 +63,12 @@ main {
         "skills blogs"
         "hobies blogs"
         "hobies experiences"
-        "hobies experiences"
+        "projects projects"
     ;
     gap: 2rem 1.6rem;
 }
 
-.section {
+.cardbox {
     padding: 1.5rem;
     background-color: var(--white);
 }
@@ -105,7 +107,8 @@ main {
 .skills.section {grid-area: skills;}
 .blogs.section {grid-area: blogs;}
 .hobies.section {grid-area: hobies;}
-.experiences.section {grid-area: blogs experiences;}
+.experiences.section {grid-area: experiences;}
+.projects.section {grid-area: projects;}
 
 .skill-bar {
     display: flex;
@@ -170,4 +173,57 @@ main {
     max-width: 30%;
     height: auto;
     padding: 1.5rem;
+}
+
+.projects.grid {
+    margin: 2rem 0;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.projectcard {
+    margin-right: 1.6rem;
+    max-width: 35%;
+}
+
+.projectcard:last-of-type {margin-right: 0;}
+
+.tag-link {
+    margin-right: 0.8rem;
+    padding: 0.5rem;
+    border: 1px solid var(--gray-two);
+    background-color: var(--white);
+}
+
+.select {
+    background-color: var(--blue);
+    border: none
+}
+
+.select small {color: var(--white);}
+
+.preview {
+    width: 100%;
+    height: 15rem;
+    background-image: url('../assets/blog1.jpg');
+}
+
+.tags {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.tags span {margin-right: 0.5rem;}
+.actbtn {
+    padding: 0.8rem 1.8rem;
+    margin-right: 0.5rem;
+    font-size: 1.1rem;
+    background-color: var(--blue);
+    border: 1px solid var(--blue);
+    color: var(--white) !important;
+}
+.actbtn:nth-of-type(2) {
+    background-color: var(--white); 
+    border: 1px solid var(--blue); 
+    color: var(--blue) !important;
 }
