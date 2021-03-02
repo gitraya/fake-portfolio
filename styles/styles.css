@@ -28,6 +28,7 @@ body {
 .lighter-color {color: var(--gray-five);}
 .blue-color {color: var(--blue);}
 .font-18 {font-size: 18px;}
+.bd-radius-4 {border-radius: 4px;}
 .bd-radius-12 {border-radius: 12px;}
 .mg-12 {margin: 12px 0;}
 .mg-8 {margin: 8px 0;}
@@ -38,7 +39,7 @@ body {
 .wg-500 {font-weight: 500;}
 .wg-600 {font-weight: 600;}
 a {text-decoration: none;}
-a:link {color: inherit;}
+a:link {color: var(--gray-two);}
 a:visited {color: inherit;}
 a:hover {color: inherit;}
 a:active {color: inherit;}
@@ -66,6 +67,30 @@ main {
         "projects projects"
     ;
     gap: 2rem 1.6rem;
+}
+
+@media screen and (max-width: 2560px) and (min-width: 2000px) {
+    main {
+        margin: 5% 20%;
+    }
+}
+
+@media screen and (max-width: 1220px) and (min-width: 1024px) {
+    main {
+        margin: 5%;
+    }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 960px) {
+    main {
+        margin: 5% 2%;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    main {
+        margin: 5%;
+    }
 }
 
 .cardbox {
@@ -128,12 +153,12 @@ main {
     height: inherit;
     background-color: var(--blue);
 }
-.skill.react{width: 60%;}
-.skill.javascript{width: 80%;}
-.skill.css{width: 90%;}
-.skill.bootstrap{width: 75%;}
-.skill.tailwind{width: 70%;}
-.skill.nodejs{width: 75%;}
+.skill.reacts {width: 60%;}
+.skill.javascripts {width: 80%;}
+.skill.csss{width: 90%;}
+.skill.bootstraps {width: 75%;}
+.skill.tailwinds {width: 70%;}
+.skill.nodejss {width: 75%;}
 .flexbox.main p {margin-right: 6rem;}
 .flexbox.main span {margin-top: 4rem;}
 
@@ -175,7 +200,7 @@ main {
     padding: 1.5rem;
 }
 
-.projects.grid {
+.projects.flex {
     margin: 2rem 0;
     display: flex;
     flex-flow: row nowrap;
@@ -184,6 +209,49 @@ main {
 .projectcard {
     margin-right: 1.6rem;
     max-width: 35%;
+}
+
+@media screen and (max-width: 1200px) and (min-width: 900px) {
+    .personal.section {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 1000px) and (min-width: 900px) {
+    .projects.flex {
+        flex-wrap: wrap;
+        margin: 1rem 0 2rem;
+    }
+
+    .projectcard {
+        max-width: 45%;
+        margin: 0.8rem 1.6rem 0.8rem 0;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .personal.section {
+        grid-template-columns: 0.6fr 1fr;
+        grid-template-areas: 
+            "one two"
+            "one three"
+            "four four"
+        ;
+    }
+
+    .gridbox.one.image {
+        height: 15rem;
+    }
+    
+    .projects.flex {
+        flex-wrap: wrap;
+        margin: 1rem 0 2rem;
+    }
+
+    .projectcard {
+        max-width: 100%;
+        margin: 0.8rem 0;
+    }
 }
 
 .projectcard:last-of-type {margin-right: 0;}
@@ -205,8 +273,11 @@ main {
 .preview {
     width: 100%;
     height: 15rem;
-    background-image: url('../assets/blog1.jpg');
+    background-position: top;
 }
+.projectcard:nth-of-type(1) .preview {background-image: url('../assets/overviewkedairaya.png');}
+.projectcard:nth-of-type(2) .preview {background-image: url('../assets/overviewediehomepage.png');}
+.projectcard:nth-of-type(3) .preview {background-image: url('../assets/overviewcheckout.png');}
 
 .tags {
     display: flex;
@@ -226,4 +297,79 @@ main {
     background-color: var(--white); 
     border: 1px solid var(--blue); 
     color: var(--blue) !important;
+}
+
+/* Footer copyright */
+footer {
+    display: flex;
+}
+.copyright {
+    max-width: 100%;
+    height: auto;
+    margin: 2rem auto;
+}
+
+.copyright a {
+    text-decoration: underline;
+}
+
+.copyright a:hover {
+    color: var(--gray-two);
+}
+
+/* Mobile device media screen */
+@media screen and (max-width: 860px) {
+    main {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "personal"
+            "skills"
+            "blogs"
+            "hobies"
+            "experiences"
+            "projects"
+        ;
+    }
+
+    .personal.section {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .flexbox.row:first-of-type .img-logo {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .personal.section {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "one one"
+            "two three"
+            "four four"
+        ;
+    }
+
+    .gridbox.one.image {
+        height: 20rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@media screen and (max-width: 630px) {
+    .personal.section {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "one"
+            "two"
+            "three"
+            "four"
+        ;
+    }
+}
+
+@media screen and (max-width: 335px) {
+    main {
+        margin: 5% 2%;
+    }
 }

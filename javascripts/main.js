@@ -1,5 +1,6 @@
 const tagsLink = document.querySelectorAll('.tag-link');
-const tagsList = ['html', 'css', 'responsive'];
+const tagsList = ['html', 'css', 'javascript', 'responsive', 'line'];
+const totalProjects = document.querySelector('#total-project-value');
 let listenClick = '';
 
 // Function to filter by tag
@@ -8,6 +9,7 @@ function filterByTags() {
     query = this.id;
     filterTags = tagsList.filter(tag => {return !tag.includes(query)});
     tagsShow = document.querySelectorAll(`.${query}`);
+    totalProjects.innerHTML = tagsShow.length;
 
     // Hide all untagged elements
     filterTags.forEach(hide => {
@@ -44,6 +46,7 @@ function unfilterByTags() {
         listenClick = '';
 
         // Clear all filters
+        totalProjects.innerHTML = allProjects.length;
         allProjects.forEach(element => {
             element.style.display = 'unset';
         });
