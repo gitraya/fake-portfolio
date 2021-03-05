@@ -217,7 +217,7 @@ main {
     }
 }
 
-@media screen and (max-width: 1000px) and (min-width: 900px) {
+@media screen and (max-width: 1040px) and (min-width: 900px) {
     .projects.flex {
         flex-wrap: wrap;
         margin: 1rem 0 2rem;
@@ -257,7 +257,7 @@ main {
 .projectcard:last-of-type {margin-right: 0;}
 
 .tag-link {
-    margin-right: 0.8rem;
+    margin: 0.8rem 0.8rem 0.8rem 0;
     padding: 0.5rem;
     border: 1px solid var(--gray-two);
     background-color: var(--white);
@@ -320,7 +320,7 @@ footer {
 /* Mobile device media screen */
 @media screen and (max-width: 860px) {
     main {
-        grid-template-columns: 1fr;
+        /* grid-template-columns: 1fr;
         grid-template-areas: 
             "personal"
             "skills"
@@ -328,11 +328,17 @@ footer {
             "hobies"
             "experiences"
             "projects"
-        ;
+        ; */
+        display: flex;
+        flex-direction: column;
     }
 
     .personal.section {
         grid-template-columns: 1fr 1fr;
+    }
+    
+    .header.projects .flexbox.row {
+        flex-wrap: wrap;
     }
 
     .flexbox.row:first-of-type .img-logo {
